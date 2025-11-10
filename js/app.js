@@ -14,10 +14,7 @@ function init() {
     initOrderHandlers();
     initCustomizationModalHandlers();
 
-    // Cart toggle for mobile
-    document.getElementById('cartToggleBtn').addEventListener('click', () => {
-        document.getElementById('cartSidebar').classList.toggle('hidden');
-    });
+  
 }
 
 // Initialize app when DOM is ready
