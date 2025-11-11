@@ -3,31 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <script src="https://cdn.tailwindcss.com"></script>
-   
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="absolute top-0 left-0 right-0 z-50 border-b border-black/10">
-      <div class="container mx-auto px-6 py-4">
-
-
-        <div class="flex justify-between items-center">
-          <h1 class="text-3xl font-display font-bold tracking-wide">
+    <header class="site-header">
+      <div class="header-container">
+        <div class="header-content">
+          <h1 class="header-logo">
             <a href="index.html">☕ Kofi Cab Cafe</a>
           </h1>
 
-          <a
-            href="menu.html"
-            id="cartToggleBtn"
-            class="relative bg-white text-sm text-amber-900 px-6 py-2 font-medium hover:bg-amber-100 transition-all shadow-lg"
-          >
-            Order Now
-          </a>
-
-
-
+          <nav class="header-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a
+              href="menu.html"
+              id="cartToggleBtn"
+              class="order-btn"
+            >
+              Order Now
+            </a>
+          </nav>
         </div>
       </div>
     </header>
