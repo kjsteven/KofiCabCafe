@@ -3,9 +3,17 @@ import { state } from './state.js';
 import { formatPrice, generateId } from './utils.js';
 import { renderCart } from './cart.js';
 
+let modalHandlersInitialized = false;
+
 export function renderCustomizationModal() {
     const modal = document.getElementById('customModal');
     const item = state.currentItem;
+
+    // Initialize handlers only once
+    if (!modalHandlersInitialized) {
+        initCustomizationModalHandlers();
+        modalHandlersInitialized = true;
+    }
 
     // Determine which options to show
     const showShots = item.category === CATEGORIES.ESPRESSO;
@@ -51,6 +59,7 @@ function renderSizeOptions() {
     const container = document.getElementById('sizeButtons');
     container.innerHTML = SIZES.map(size => `
         <button 
+            type="button"
             class="size-btn border-2 rounded-xl py-3 text-center hover:border-amber-500 transition-all ${
                 state.customization.size.name === size.name ? 'border-amber-500 bg-amber-50' : 'border-amber-200'
             }" 
@@ -62,7 +71,8 @@ function renderSizeOptions() {
     `).join('');
 
     container.querySelectorAll('.size-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
             state.customization.size = {
                 name: btn.dataset.name,
                 price: parseFloat(btn.dataset.price)
@@ -77,6 +87,7 @@ function renderSugarOptions() {
     const container = document.getElementById('sugarButtons');
     const buttons = SUGAR_LEVELS.slice(0, 4).map(level => `
         <button 
+            type="button"
             class="sugar-btn border-2 rounded-lg py-2 text-sm hover:border-amber-500 transition-all ${
                 state.customization.sugar.name === level ? 'border-amber-500 bg-amber-50' : 'border-amber-200'
             }" 
@@ -87,6 +98,7 @@ function renderSugarOptions() {
 
     const lastButton = `
         <button 
+            type="button"
             class="sugar-btn w-full mt-2 border-2 rounded-lg py-2 text-sm hover:border-amber-500 transition-all ${
                 state.customization.sugar.name === '100%' ? 'border-amber-500 bg-amber-50' : 'border-amber-200'
             }" 
@@ -98,7 +110,8 @@ function renderSugarOptions() {
     container.innerHTML = buttons + lastButton;
 
     container.querySelectorAll('.sugar-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
             state.customization.sugar = {
                 name: btn.dataset.level,
                 price: 0
@@ -113,6 +126,7 @@ function renderShotsOptions() {
     const container = document.getElementById('shotsButtons');
     container.innerHTML = ESPRESSO_SHOTS.map(shot => `
         <button 
+            type="button"
             class="shots-btn border-2 rounded-lg py-2 text-sm hover:border-amber-500 transition-all ${
                 state.customization.shots.name === shot.name ? 'border-amber-500 bg-amber-50' : 'border-amber-200'
             }" 
@@ -123,7 +137,8 @@ function renderShotsOptions() {
     `).join('');
 
     container.querySelectorAll('.shots-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
             state.customization.shots = {
                 name: btn.dataset.name,
                 price: parseFloat(btn.dataset.price)
@@ -138,6 +153,7 @@ function renderTempOptions() {
     const container = document.getElementById('tempButtons');
     container.innerHTML = TEMPERATURES.map(temp => `
         <button 
+            type="button"
             class="temp-btn border-2 rounded-lg py-2 hover:border-amber-500 transition-all ${
                 state.customization.temp.name === temp ? 'border-amber-500 bg-amber-50' : 'border-amber-200'
             }" 
@@ -147,7 +163,8 @@ function renderTempOptions() {
     `).join('');
 
     container.querySelectorAll('.temp-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
             state.customization.temp = {
                 name: btn.dataset.temp,
                 price: 0
@@ -202,25 +219,31 @@ function updateModalPrice() {
 
 export function initCustomizationModalHandlers() {
     // Close modal
-    document.getElementById('closeModalBtn').addEventListener('click', () => {
+    document.getElementById('closeModalBtn').addEventListener('click', (e) => {
+        e.preventDefault();
         document.getElementById('customModal').classList.add('hidden');
     });
 
     // Quantity controls
-    document.getElementById('decreaseQty').addEventListener('click', () => {
+    document.getElementById('decreaseQty').addEventListener('click', (e) => {
+        e.preventDefault();
         state.customization.quantity = Math.max(1, state.customization.quantity - 1);
         document.getElementById('modalQuantity').textContent = state.customization.quantity;
         updateModalPrice();
     });
 
-    document.getElementById('increaseQty').addEventListener('click', () => {
+    document.getElementById('increaseQty').addEventListener('click', (e) => {
+        e.preventDefault();
         state.customization.quantity++;
         document.getElementById('modalQuantity').textContent = state.customization.quantity;
         updateModalPrice();
     });
 
     // Add to cart
-    document.getElementById('addToCartBtn').addEventListener('click', () => {
+    document.getElementById('addToCartBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Add to cart clicked', state.currentItem, state.customization); // Debug log
+        
         const cartItem = {
             id: generateId(),
             baseId: state.currentItem.id,
