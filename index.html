@@ -11,6 +11,7 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
+    
   </head>
   <body class="flex-column">
     <div id="site-header"></div>
@@ -30,101 +31,58 @@
       <div class="slideshow" aria-hidden="true">
         <div
           class="slide"
-          style="
-            background-image: url('https://i.pinimg.com/1200x/f1/79/83/f17983147805f8d34257a3f3e2a6b8f5.jpg');
-          "
+          style="background-image: url(./assets/img1.jpg)"
         ></div>
         <div
           class="slide"
-          style="
-            background-image: url('https://i.pinimg.com/1200x/07/79/37/077937e207ce85bc528964cb953603fb.jpg');
-          "
+          style="background-image: url(./assets/img2.jpg)"
         ></div>
         <div
           class="slide"
-          style="
-            background-image: url('https://images.unsplash.com/photo-1690983327126-d0f28eaa4fdb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170');
-          "
+          style="background-image: url(./assets/img3.jpg)"
+        ></div>
+
+        <div
+          class="slide"
+          style="background-image: url(./assets/img4.jpg)"
+        ></div>
+
+        <div
+          class="slide"
+          style="background-image: url(./assets/img5.jpg)"
+        ></div>
+
+        <div
+          class="slide"
+          style="background-image: url(./assets/img6.jpg)"
         ></div>
       </div>
 
       <div class="hero-content">
-        <p>Elevate your day with</p>
-        <h1>
-          RICH & <br />
-          AROMATIC <br />
-          COFFEE
-        </h1>
+        <img src="./assets/homepage.jpg" alt="" class="logo-home" />
+        <div>
+          <h1>Kofi Cab Cafe</h1>
+          <!-- Tagline options — pick one and replace the placeholder -->
+          <p>YOUR LOCAL COFFEE STOP</p>
+        </div>
 
-        <img class="home-img" src="/assets/homepage.jpg" alt="" />
+        <a href="menu.html" class="btn-primary mt-4">Explore our Menu</a>
       </div>
     </main>
-
-
-    <section class="featured-section">
-     
-    </section>
 
     <section class="about-section">
       <div>
         <h2>About Kobi Cab Cafe</h2>
+
+        <p class="about-paragraph">
+          Every great cup of coffee starts with a story and ours began <br />
+          with a simple dream of creating a cozy corner where people <br />
+          could relax, connect, and enjoy good coffee
+        </p>
       </div>
 
-      <div class="grid grid-cols-3 gap-4">
-        <div class="glass-card">
-          <?xml version="1.0" encoding="UTF-8"?><svg
-            width="24px"
-            height="24px"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            color="#000000"
-          >
-            <path
-              d="M12.4961 19.7165L18.4961 16.2879C18.8077 16.1099 19 15.7785 19 15.4197V9.58032C19 9.22147 18.8077 8.89012 18.4961 8.71208L12.4961 5.28351C12.1887 5.10783 11.8113 5.10783 11.5039 5.28351L5.50386 8.71208C5.19229 8.89012 5 9.22147 5 9.58032V15.4197C5 15.7785 5.19229 16.1099 5.50386 16.2879L11.5039 19.7165C11.8113 19.8922 12.1887 19.8922 12.4961 19.7165Z"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M5.5 9.5L12 13M12 13L18.5 9.5M12 13V19.5"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M3 3.01013L3.01 2.99902"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M3 21.0101L3.01 20.999"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M21 3.01013L21.01 2.99902"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M21 21.0101L21.01 20.999"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-
+      <div class="about-cards">
+        <div class="about-items" style="grid-column: span 2">
           <div class="text-content">
             <h3>Our Beginning</h3>
             <p>
@@ -136,144 +94,388 @@
           </div>
         </div>
 
-        <div class="glass-card">
-          <?xml version="1.0" encoding="UTF-8"?><svg
-            width="24px"
-            height="24px"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            color="#000000"
-          >
-            <path
-              d="M12.4961 19.7165L18.4961 16.2879C18.8077 16.1099 19 15.7785 19 15.4197V9.58032C19 9.22147 18.8077 8.89012 18.4961 8.71208L12.4961 5.28351C12.1887 5.10783 11.8113 5.10783 11.5039 5.28351L5.50386 8.71208C5.19229 8.89012 5 9.22147 5 9.58032V15.4197C5 15.7785 5.19229 16.1099 5.50386 16.2879L11.5039 19.7165C11.8113 19.8922 12.1887 19.8922 12.4961 19.7165Z"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M5.5 9.5L12 13M12 13L18.5 9.5M12 13V19.5"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M3 3.01013L3.01 2.99902"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M3 21.0101L3.01 20.999"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M21 3.01013L21.01 2.99902"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M21 21.0101L21.01 20.999"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-
+        <div class="about-items">
           <div class="text-content">
-            <h3>Our Beginning</h3>
+            <h3>Our Mission</h3>
             <p>
-              Founded with passion and brewed with love, Kofi Cab Cafe started
-              as a small local coffee shop that quickly became a community
-              favorite. We take pride in serving handcrafted beverages made with
-              quality ingredients and care.
+              To bring comfort and inspiration through every cup. Whether you're
+              here for a quick pick-me-up or to spend time with friends, we aim
+              to make every visit special and meaningful.
             </p>
           </div>
         </div>
 
-        <div class="glass-card">
-          <?xml version="1.0" encoding="UTF-8"?><svg
-            width="24px"
-            height="24px"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            color="#000000"
-          >
-            <path
-              d="M12.4961 19.7165L18.4961 16.2879C18.8077 16.1099 19 15.7785 19 15.4197V9.58032C19 9.22147 18.8077 8.89012 18.4961 8.71208L12.4961 5.28351C12.1887 5.10783 11.8113 5.10783 11.5039 5.28351L5.50386 8.71208C5.19229 8.89012 5 9.22147 5 9.58032V15.4197C5 15.7785 5.19229 16.1099 5.50386 16.2879L11.5039 19.7165C11.8113 19.8922 12.1887 19.8922 12.4961 19.7165Z"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M5.5 9.5L12 13M12 13L18.5 9.5M12 13V19.5"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M3 3.01013L3.01 2.99902"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M3 21.0101L3.01 20.999"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M21 3.01013L21.01 2.99902"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M21 21.0101L21.01 20.999"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-
+        <div class="about-items">
           <div class="text-content">
-            <h3>Our Beginning</h3>
+            <h3>Our Values</h3>
             <p>
-              Founded with passion and brewed with love, Kofi Cab Cafe started
-              as a small local coffee shop that quickly became a community
-              favorite. We take pride in serving handcrafted beverages made with
-              quality ingredients and care.
+              We believe in community, creativity, and connection. Kofi Cab Cafe
+              isn’t just a coffee shop it’s a space built for stories, smiles,
+              and shared experiences.
             </p>
           </div>
         </div>
-
-
       </div>
     </section>
 
-    <footer class="bg-amber-900 text-white text-center py-4 mt-12">
-      &copy; 2024 Kofi Cab Cafe. All rights reserved.
+    <section class="customer-gallery-section">
+      <div>
+        <h2>Customer Gallery</h2>
+
+        <p class="about-paragraph">
+          Snapshots from our customers — tag @KofiCabCafe with #KofiMoments to
+          be featured.
+        </p>
+      </div>
+
+      <div class="head">
+        <div class="controls">
+          <button id="prev" class="nav-btn" aria-label="Prev">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button id="next" class="nav-btn" aria-label="Next">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 6L15 12L9 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="slider">
+        <div class="track" id="track">
+          <article class="project-card" active>
+            <img
+              class="project-card__bg"
+              src="./assets/customer_gallery/pic1.jpg"
+              alt=""
+            />
+
+            <div class="project-card__content">
+              <div>
+                <p class="project-card__title">@KofiCabCafe</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" active>
+            <img
+              class="project-card__bg"
+              src="./assets/customer_gallery/pic2.jpg"
+              alt=""
+            />
+
+            <div class="project-card__content">
+              <div>
+                <p class="project-card__title">@KofiCabCafe</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" active>
+            <img
+              class="project-card__bg"
+              src="./assets/customer_gallery/pic3.jpg"
+              alt=""
+            />
+
+            <div class="project-card__content">
+              <div>
+                <p class="project-card__title">@KofiCabCafe</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" active>
+            <img
+              class="project-card__bg"
+              src="./assets/customer_gallery/pic4.jpg"
+              alt=""
+            />
+
+            <div class="project-card__content">
+              <div>
+                <p class="project-card__title">@KofiCabCafe</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" active>
+            <img
+              class="project-card__bg"
+              src="./assets/customer_gallery/pic5.jpg"
+              alt=""
+            />
+
+            <div class="project-card__content">
+              <div>
+                <p class="project-card__title">@KofiCabCafe</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" active>
+            <img
+              class="project-card__bg"
+              src="./assets/customer_gallery/pic6.jpg"
+              alt=""
+            />
+
+            <div class="project-card__content">
+              <div>
+                <p class="project-card__title">@KofiCabCafe</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" active>
+            <img
+              class="project-card__bg"
+              src="./assets/customer_gallery/pic7.jpg"
+              alt=""
+            />
+
+            <div class="project-card__content">
+              <div>
+                <p class="project-card__title">@KofiCabCafe</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" active>
+            <img
+              class="project-card__bg"
+              src="./assets/customer_gallery/pic8.jpg"
+              alt=""
+            />
+
+            <div class="project-card__content">
+              <div>
+                <p class="project-card__title">@KofiCabCafe</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <section class="visit-us-section">
+      <div class="visit-us-container">
+        <div>
+          <h2>Visit us</h2>
+
+          <p class="visit-us-paragraph">
+            Visit Kofi Cab Cafe to experience our warm atmosphere,<br />
+            delightful coffee, and friendly service.
+          </p>
+        </div>
+
+        <div>
+          <p class="title-visit">Kofi Cab Cafe</p>
+          <p>Blk. 127, Lot 29 29th Ave, Taguig</p>
+          <p>1216 Metro Manila</p>
+          <p>Phone: (123) 456-7890</p>
+        </div>
+
+        <div>
+          <p class="title-visit">Open Hours:</p>
+          <p>Mon-Fri: 7:00 AM - 8:00 PM</p>
+          <p>Sat-Sun: 8:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8630035970996!2d121.0572226800361!3d14.549825749653312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90000a28e0f%3A0x71ff3342c8b1bfd!2sKofi%20Cab!5e0!3m2!1sen!2sph!4v1763062285806!5m2!1sen!2sph"
+          width="630"
+          height="450"
+          style="border-radius: 16px"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo-container">
+
+          <div class="footer-logo-desc">
+            <img src="./assets/homepage1.jpg" alt="" class="footer-logo" />
+
+            <p class="footer-description">
+              Join us for a cup and experience the warmth of
+              our community. Come to Kofi Cab Cafe.
+            </p>
+          </div>
+
+          <div class="footer-socials">
+            <a href="#" class="social-icon"><i class="iconoir-facebook"></i></a>
+            <a href="#" class="social-icon"
+              ><i class="iconoir-instagram"></i
+            ></a>
+            <a href="#" class="social-icon"><i class="iconoir-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="nav-container">
+          <nav class="footer-nav">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="menu.html" class="footer-link">Order Now</a>
+          </nav>
+
+          <nav class="footer-nav">
+            <a href="index.html" class="footer-link">Food</a>
+            <a href="contact.html" class="footer-link">Rules</a>
+            <a href="menu.html" class="footer-link">FAQ</a>
+          </nav>
+
+          <nav class="footer-nav">
+            <a href="index.html" class="footer-link">Privacy Policy</a>
+            <a href="contact.html" class="footer-link">Terms and Conditions</a>
+            <a href="menu.html" class="footer-link">Cookie Policy</a>
+          </nav>
+        </div>
+      </div>
+
+      <div>
+        <p class="copyright">&copy; 2024 Kofi Cab Cafe. All rights reserved.</p>
+      </div>
     </footer>
 
     <script type="module" src="js/app.js"></script>
   </body>
 </html>
+
+<script>
+  (() => {
+    const track = document.getElementById("track");
+    const wrap = track.parentElement;
+    const cards = Array.from(track.children);
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+    const dotsBox = document.getElementById("dots");
+
+    const isMobile = () => matchMedia("(max-width:767px)").matches;
+
+    cards.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.className = "dot";
+      dot.onclick = () => activate(i, true);
+      dotsBox.appendChild(dot);
+    });
+    const dots = Array.from(dotsBox.children);
+
+    let current = 0;
+
+    function center(i) {
+      const card = cards[i];
+      const axis = isMobile() ? "top" : "left";
+      const size = isMobile() ? "clientHeight" : "clientWidth";
+      const start = isMobile() ? card.offsetTop : card.offsetLeft;
+      wrap.scrollTo({
+        [axis]: start - (wrap[size] / 2 - card[size] / 2),
+        behavior: "smooth",
+      });
+    }
+
+    function toggleUI(i) {
+      cards.forEach((c, k) => c.toggleAttribute("active", k === i));
+      dots.forEach((d, k) => d.classList.toggle("active", k === i));
+      prev.disabled = i === 0;
+      next.disabled = i === cards.length - 1;
+    }
+
+    function activate(i, scroll) {
+      if (i === current) return;
+      current = i;
+      toggleUI(i);
+      if (scroll) center(i);
+    }
+
+    function go(step) {
+      activate(Math.min(Math.max(current + step, 0), cards.length - 1), true);
+    }
+
+    prev.onclick = () => go(-1);
+    next.onclick = () => go(1);
+
+    addEventListener(
+      "keydown",
+      (e) => {
+        if (["ArrowRight", "ArrowDown"].includes(e.key)) go(1);
+        if (["ArrowLeft", "ArrowUp"].includes(e.key)) go(-1);
+      },
+      { passive: true }
+    );
+
+    cards.forEach((card, i) => {
+      card.addEventListener(
+        "mouseenter",
+        () => matchMedia("(hover:hover)").matches && activate(i, true)
+      );
+      card.addEventListener("click", () => activate(i, true));
+    });
+
+    let sx = 0,
+      sy = 0;
+    track.addEventListener(
+      "touchstart",
+      (e) => {
+        sx = e.touches[0].clientX;
+        sy = e.touches[0].clientY;
+      },
+      { passive: true }
+    );
+
+    track.addEventListener(
+      "touchend",
+      (e) => {
+        const dx = e.changedTouches[0].clientX - sx;
+        const dy = e.changedTouches[0].clientY - sy;
+        if (isMobile() ? Math.abs(dy) > 60 : Math.abs(dx) > 60)
+          go((isMobile() ? dy : dx) > 0 ? -1 : 1);
+      },
+      { passive: true }
+    );
+    if (window.matchMedia("(max-width:767px)").matches) dotsBox.hidden = true;
+
+    addEventListener("resize", () => center(current));
+
+    toggleUI(0);
+    center(0);
+  })();
+</script>
