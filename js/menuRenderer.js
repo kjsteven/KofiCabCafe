@@ -44,20 +44,20 @@ export function renderMenu() {
     }
 
     menuGrid.innerHTML = filteredItems.map(item => `
-        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 flex flex-col h-full">
             <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover">
-            <div class="p-5">
+            <div class="p-5 flex flex-col flex-grow">
                 <div class="flex items-center gap-2 mb-2">
                     <span class="text-xs px-2 py-1 bg-amber-200 text-amber-900 rounded-full font-semibold">
                         ${getCategoryLabel(item.category)}
                     </span>
                 </div>
                 <h3 class="text-xl font-bold text-amber-900 mb-2">${item.name}</h3>
-                <p class="text-gray-600 text-sm mb-3">${item.description}</p>
-                <div class="flex justify-between items-center">
+                <p class="text-gray-600 text-sm mb-3 flex-grow">${item.description}</p>
+                <div class="flex justify-between items-center mt-auto">
                     <span class="text-2xl font-bold text-amber-700">${formatPrice(item.price)}</span>
                     ${item.customizable
-                        ? `<button class="customize-btn bg-amber-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-amber-700 transition-all shadow-md" data-item-id="${item.id}">Customize</button>`
+                        ? `<button class="customize-btn bg-amber-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-amber-700 transition-all shadow-md" data-item-id="${item.id}">Order</button>`
                         : `<button class="add-simple-btn bg-amber-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-amber-700 transition-all shadow-md" data-item-id="${item.id}">Add +</button>`
                     }
                 </div>

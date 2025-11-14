@@ -1,7 +1,7 @@
 import { CATEGORY_LABELS } from './config.js';
 
 export function formatPrice(price) {
-    return `$${price.toFixed(2)}`;
+    return `₱${price.toFixed(2)}`;
 }
 
 export function getCategoryLabel(category) {

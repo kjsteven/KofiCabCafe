@@ -13,8 +13,8 @@ export const CATEGORY_LABELS = {
 
 export const SIZES = [
     { name: 'Small', price: 0, oz: '12 oz' },
-    { name: 'Medium', price: 0.50, oz: '16 oz' },
-    { name: 'Large', price: 1.00, oz: '22 oz' }
+    { name: 'Medium', price: 10, oz: '16 oz' },
+    { name: 'Large', price: 20, oz: '22 oz' }
 ];
 
 export const SUGAR_LEVELS = ['0%', '25%', '50%', '75%', '100%'];
@@ -42,7 +42,7 @@ export const MENU_ITEMS = [
     {
         id: 1,
         name: "Hot Cappuccino",
-        price: 4.50,
+        price: 85,
         description: "Espresso with steamed milk foam",
         category: CATEGORIES.ESPRESSO,
         image: "./menu/espresso/Hot_Cappuccino.jpg",
@@ -51,7 +51,7 @@ export const MENU_ITEMS = [
     {
         id: 2,
         name: "Hot Caramel Latte",
-        price: 4.75,
+        price: 85,
         description: "Smooth latte with caramel sweetness",
         category: CATEGORIES.ESPRESSO,
         image: "./menu/espresso/Hot_Caramel_Latte.jpg",
@@ -60,7 +60,7 @@ export const MENU_ITEMS = [
     {
         id: 3,
         name: "Hot Latte",
-        price: 4.50,
+        price: 85,
         description: "Smooth espresso with steamed milk",
         category: CATEGORIES.ESPRESSO,
         image: "./menu/espresso/Hot_Latte.jpg",
@@ -69,7 +69,7 @@ export const MENU_ITEMS = [
     {
         id: 4,
         name: "Hot Mocha",
-        price: 5.25,
+        price: 105,
         description: "Chocolate and espresso delight",
         category: CATEGORIES.ESPRESSO,
         image: "./menu/espresso/Hot_Mocha.jpg",
@@ -79,7 +79,7 @@ export const MENU_ITEMS = [
     {
         id: 5,
         name: "Apple Berry Refresher",
-        price: 4.75,
+        price: 95,
         description: "Refreshing apple and berry blend",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Apple_Berry_Refresher.jpg",
@@ -88,7 +88,7 @@ export const MENU_ITEMS = [
     {
         id: 6,
         name: "Blueberry Cream",
-        price: 5.25,
+        price: 95,
         description: "Creamy blueberry delight",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Blueberry_Cream.jpg",
@@ -97,7 +97,7 @@ export const MENU_ITEMS = [
     {
         id: 7,
         name: "Caramel Coffee Jelly Frappe",
-        price: 5.75,
+        price: 110,
         description: "Blended caramel with coffee jelly",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Caramel_Coffee_Jelly_Frappe.jpg",
@@ -106,7 +106,7 @@ export const MENU_ITEMS = [
     {
         id: 8,
         name: "Caramel Macchiato",
-        price: 5.50,
+        price: 110,
         description: "Caramel layered espresso drink",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Caramel_Macchiato.jpg",
@@ -115,7 +115,7 @@ export const MENU_ITEMS = [
     {
         id: 9,
         name: "Chocolate Hazelnut Macchiato",
-        price: 5.75,
+        price: 110,
         description: "Rich chocolate and hazelnut blend",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Chocolate_Hazelnut_Macchiato.jpg",
@@ -124,7 +124,7 @@ export const MENU_ITEMS = [
     {
         id: 10,
         name: "Cinnamon Latte",
-        price: 4.75,
+        price: 95,
         description: "Warm cinnamon spiced latte",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Cinnamon_Latte.jpg",
@@ -133,7 +133,7 @@ export const MENU_ITEMS = [
     {
         id: 11,
         name: "Iced Mocha",
-        price: 5.25,
+        price: 95,
         description: "Refreshing iced chocolate coffee",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Iced_Mocha.jpg",
@@ -142,7 +142,7 @@ export const MENU_ITEMS = [
     {
         id: 12,
         name: "Kookie Krumble",
-        price: 5.50,
+        price: 110,
         description: "Cookie crumble topped drink",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Kookie_Krumble.jpg",
@@ -151,7 +151,7 @@ export const MENU_ITEMS = [
     {
         id: 13,
         name: "Kookie Krumble Frappe",
-        price: 6.00,
+        price: 110,
         description: "Blended cookie perfection",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Kookie_Krumble_Frappe.jpg",
@@ -160,7 +160,7 @@ export const MENU_ITEMS = [
     {
         id: 14,
         name: "Lemon Yakult Refresher",
-        price: 4.50,
+        price: 95,
         description: "Tangy lemon yakult blend",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Lemon_Yakult_Refresher.jpg",
@@ -169,7 +169,7 @@ export const MENU_ITEMS = [
     {
         id: 15,
         name: "Lotus Biscoff Frappe",
-        price: 6.25,
+        price: 110,
         description: "Blended lotus biscoff delight",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Lotus_Biscoff_Frappe.jpg",
@@ -178,7 +178,7 @@ export const MENU_ITEMS = [
     {
         id: 16,
         name: "Mango Cream Frappe",
-        price: 5.75,
+        price: 110,
         description: "Tropical mango blended cream",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Mango_Cream_Frappe.jpg",
@@ -187,7 +187,7 @@ export const MENU_ITEMS = [
     {
         id: 17,
         name: "Matcha Cream",
-        price: 5.25,
+        price: 110,
         description: "Creamy matcha goodness",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Matcha_Cream.jpg",
@@ -196,7 +196,7 @@ export const MENU_ITEMS = [
     {
         id: 18,
         name: "Matcha Latte",
-        price: 4.75,
+        price: 95,
         description: "Premium Japanese green tea latte",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Matcha_Latter.jpg",
@@ -205,7 +205,7 @@ export const MENU_ITEMS = [
     {
         id: 19,
         name: "Mocha Frappe",
-        price: 5.75,
+        price: 110,
         description: "Chocolate blended ice coffee",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Mocha_Frappe.jpg",
@@ -214,7 +214,7 @@ export const MENU_ITEMS = [
     {
         id: 20,
         name: "Passion Fruit Tea",
-        price: 4.25,
+        price: 95,
         description: "Tropical passion fruit infusion",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Passion_Fruit_Tea.jpg",
@@ -223,17 +223,17 @@ export const MENU_ITEMS = [
     {
         id: 21,
         name: "Strawberry Soda Pop",
-        price: 4.00,
+        price: 95,
         description: "Fizzy strawberry refreshment",
         category: CATEGORIES.NON_COFFEE,
         image: "./menu/noncoffee/Strawberry_Soda_Pop.jpg",
-        customizable: false
+        customizable: true
     },
     // Snacks Category
     {
         id: 22,
         name: "Beef Tapa",
-        price: 8.50,
+        price: 130,
         description: "Filipino marinated beef",
         category: CATEGORIES.SNACKS,
         image: "./menu/snacks/Beef_Tapa.jpg",
@@ -242,7 +242,7 @@ export const MENU_ITEMS = [
     {
         id: 23,
         name: "Chicken Thigh Fillet",
-        price: 7.75,
+        price: 130,
         description: "Juicy chicken thigh fillet",
         category: CATEGORIES.SNACKS,
         image: "./menu/snacks/Chicken_Thigh_Fillet.jpg",
@@ -251,7 +251,7 @@ export const MENU_ITEMS = [
     {
         id: 24,
         name: "Cookies & Cream Kroffles",
-        price: 6.50,
+        price: 100,
         description: "Croissant waffle with cookies & cream",
         category: CATEGORIES.SNACKS,
         image: "./menu/snacks/Cookies_&_Cream_Kroffles.jpg",
@@ -260,7 +260,7 @@ export const MENU_ITEMS = [
     {
         id: 25,
         name: "Corned Beef",
-        price: 7.50,
+        price: 130,
         description: "Classic corned beef meal",
         category: CATEGORIES.SNACKS,
         image: "./menu/snacks/Corned_Beef.jpg",
@@ -269,7 +269,7 @@ export const MENU_ITEMS = [
     {
         id: 26,
         name: "Fish & Chips",
-        price: 8.00,
+        price: 160,
         description: "Crispy fish with golden chips",
         category: CATEGORIES.SNACKS,
         image: "./menu/snacks/Fish_&_Chips.jpg",
@@ -278,7 +278,7 @@ export const MENU_ITEMS = [
     {
         id: 27,
         name: "Lotus Biscoff Kroffles",
-        price: 6.75,
+        price: 120,
         description: "Croissant waffle with lotus biscoff",
         category: CATEGORIES.SNACKS,
         image: "./menu/snacks/Lotus_Biscoff_Kroffles.jpg",
@@ -287,7 +287,7 @@ export const MENU_ITEMS = [
     {
         id: 28,
         name: "Nutella Alcapone Kroffle",
-        price: 7.00,
+        price: 130,
         description: "Indulgent nutella kroffle",
         category: CATEGORIES.SNACKS,
         image: "./menu/snacks/Nutella_Alcapone_Kroffle.jpg",
@@ -296,7 +296,7 @@ export const MENU_ITEMS = [
     {
         id: 29,
         name: "Strawberry Kroffles",
-        price: 6.50,
+        price: 100,
         description: "Sweet strawberry kroffle delight",
         category: CATEGORIES.SNACKS,
         image: "./menu/snacks/Strawberry_Kroffles.jpg",
@@ -305,7 +305,7 @@ export const MENU_ITEMS = [
     {
         id: 30,
         name: "S'mores Kroffle",
-        price: 6.75,
+        price: 130,
         description: "Marshmallow, chocolate & graham kroffle",
         category: CATEGORIES.SNACKS,
         image: "./menu/snacks/Smores_Kroffle.jpg",
