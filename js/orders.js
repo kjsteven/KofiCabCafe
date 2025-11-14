@@ -88,18 +88,4 @@ export function initOrderHandlers() {
 
         alert(`Thank you ${customerName}! Your order has been placed successfully! We'll call you at ${customerPhone} when it's ready.`);
     });
-
-    // Toggle recent orders
-    document.getElementById('ordersToggleBtn').addEventListener('click', () => {
-        const container = document.getElementById('recentOrdersContainer');
-        const icon = document.getElementById('orderToggleIcon');
-
-        if (container.classList.contains('hidden')) {
-            container.classList.remove('hidden');
-            icon.textContent = '▲';
-        } else {
-            container.classList.add('hidden');
-            icon.textContent = '▼';
-        }
-    });
 }

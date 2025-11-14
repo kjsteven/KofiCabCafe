@@ -11,14 +11,16 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body
-    class="bg-gradient-to-br from-amber-50 via-white to-orange-50 min-h-screen"
-  >
-
-  
+  <body class="min-h-screen">
     <div id="site-header"></div>
+
+
     <script>
       (async () => {
         try {
@@ -31,14 +33,11 @@
       })();
     </script>
 
-<<<<<<< HEAD
     <div class="menu-container">
-      <div class="menu-wrapper grid grid-cols-1 lg:grid-cols-3 gap-8">
-=======
-    <!-- Main Content with proper spacing -->
-    <div class="container mx-auto px-4 sm:px-6 py-6 sm:py-8 mt-20 sm:mt-24 lg:mt-28">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
->>>>>>> 18e2f1d1dd9d19a31d01eedfc6deaed44477ae0c
+      <!-- Main Content with proper spacing -->
+      <div class="container mx-auto px-4 sm:px-6 py-6 sm:py-8 mt-20 sm:mt-24 lg:mt-28">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+
         <!-- Menu Section -->
         <div class="lg:col-span-2">
           <div class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
@@ -50,27 +49,18 @@
             <div id="categoryTabs" class="flex flex-wrap gap-3 mb-8"></div>
 
             <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-h-[500px] sm:max-h-[600px] overflow-y-auto pr-2"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-h-[500px] sm:max-h-[600px] overflow-y-auto pr-2"
               id="menuGrid"
             ></div>
           </div>
         </div>
 
-        <!-- Right Sidebar: Recent Orders Button + Cart -->
+        <!-- Right Sidebar: Recent Orders and Cart -->
         <div class="lg:col-span-1 space-y-4">
-          <!-- Recent Orders Toggle Button -->
-          <button
-            id="ordersToggleBtn"
-            class="w-full bg-gradient-to-r from-amber-600 to-orange-600 text-white py-3 sm:py-4 rounded-3xl font-semibold hover:from-amber-700 hover:to-orange-700 transition-all shadow-xl flex items-center justify-between px-4 sm:px-6"
-          >
-            <span class="text-base sm:text-lg">📋 Recent Orders</span>
-            <span id="orderToggleIcon" class="text-xl sm:text-2xl">▼</span>
-          </button>
-
-          <!-- Recent Orders (Collapsible) -->
+          <!-- Recent Orders -->
           <div
             id="recentOrdersContainer"
-            class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 hidden overflow-hidden transition-all"
+            class="bg-white rounded-3xl shadow-xl p-6 sm:p-8"
           >
             <h2 class="text-xl sm:text-2xl font-display font-bold text-amber-900 mb-6">
               Recent Orders
@@ -84,7 +74,7 @@
           <!-- Cart Sidebar -->
           <div
             id="cartSidebar"
-            class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 lg:sticky lg:top-24"
+            class="bg-white rounded-3xl shadow-xl p-6 sm:p-8"
           >
             <h2 class="text-xl sm:text-2xl font-display font-bold text-amber-900 mb-6">
               Your Cart
@@ -256,6 +246,56 @@
         </div>
       </div>
     </div>
+
+    
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo-container">
+
+          <div class="footer-logo-desc">
+            <img src="./assets/homepage1.jpg" alt="" class="footer-logo" />
+
+            <p class="footer-description">
+              Join us for a cup and experience the warmth of
+              our community. Come to Kofi Cab Cafe.
+            </p>
+          </div>
+
+          <div class="footer-socials">
+            <a href="#" class="social-icon"><i class="iconoir-facebook"></i></a>
+            <a href="#" class="social-icon"
+              ><i class="iconoir-instagram"></i
+            ></a>
+            <a href="#" class="social-icon"><i class="iconoir-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="nav-container">
+          <nav class="footer-nav">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="menu.html" class="footer-link">Order Now</a>
+          </nav>
+
+          <nav class="footer-nav">
+            <a href="index.html" class="footer-link">Food</a>
+            <a href="contact.html" class="footer-link">Rules</a>
+            <a href="menu.html" class="footer-link">FAQ</a>
+          </nav>
+
+          <nav class="footer-nav">
+            <a href="index.html" class="footer-link">Privacy Policy</a>
+            <a href="contact.html" class="footer-link">Terms and Conditions</a>
+            <a href="menu.html" class="footer-link">Cookie Policy</a>
+          </nav>
+        </div>
+      </div>
+
+      <div>
+        <p class="copyright">&copy; 2024 Kofi Cab Cafe. All rights reserved.</p>
+      </div>
+    </footer>
+    
 
     <script type="module" src="js/app.js"></script>
   </body>
