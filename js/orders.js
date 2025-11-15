@@ -1,6 +1,7 @@
 import { state } from './state.js';
 import { formatPrice, generateId } from './utils.js';
 import { renderCart } from './cart.js';
+import { sendOrderConfirmation } from './emailService.js';
 
 export function renderRecentOrders() {
     const container = document.getElementById('recentOrders');
@@ -15,7 +16,7 @@ export function renderRecentOrders() {
             <div class="flex justify-between items-start mb-3">
                 <div>
                     <h4 class="font-bold text-lg text-amber-900">${order.customerName}</h4>
-                    <p class="text-xs text-gray-500">${order.customerPhone}</p>
+                    <p class="text-xs text-gray-500">${order.customerEmail}</p>
                     <p class="text-xs text-gray-500">${order.timestamp}</p>
                 </div>
                 <span class="bg-amber-600 text-white px-3 py-1 rounded-full font-bold text-sm">${formatPrice(order.total)}</span>
@@ -80,7 +81,7 @@ export function initOrderHandlers() {
         e.preventDefault();
 
         const customerName = document.getElementById('customerName').value.trim();
-        const customerPhone = document.getElementById('customerPhone').value.trim();
+        const customerEmail = document.getElementById('customerEmail').value.trim();
         const specialInstructions = document.getElementById('specialInstructions').value.trim();
 
         if (state.cart.length === 0) {
@@ -96,7 +97,7 @@ export function initOrderHandlers() {
         const order = {
             id: generateId(),
             customerName,
-            customerPhone,
+            customerEmail,
             specialInstructions,
             items: [...state.cart],
             total: state.getCartTotal(),
@@ -110,12 +111,25 @@ export function initOrderHandlers() {
         renderCart();
         renderRecentOrders();
 
-        Swal.fire({
-            icon: 'success',
-            title: 'Order Placed!',
-            html: `Thank you <strong>${customerName}</strong>!<br>Your order has been placed successfully!<br>We'll call you at <strong>${customerPhone}</strong> when it's ready.`,
-            confirmButtonColor: '#d97706',
-            confirmButtonText: 'Great!'
+        // Send email confirmation
+        sendOrderConfirmation(order).then(result => {
+            if (result.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Order Placed!',
+                    html: `Thank you <strong>${customerName}</strong>!<br>Your order has been placed successfully!<br>A confirmation email has been sent to <strong>${customerEmail}</strong>.`,
+                    confirmButtonColor: '#d97706',
+                    confirmButtonText: 'Great!'
+                });
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Order Placed!',
+                    html: `Thank you <strong>${customerName}</strong>!<br>Your order has been placed successfully!<br><small style="color: #999;">Note: Email confirmation could not be sent, but your order is confirmed.</small>`,
+                    confirmButtonColor: '#d97706',
+                    confirmButtonText: 'Great!'
+                });
+            }
         });
     });
 }
