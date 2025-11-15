@@ -32,7 +32,7 @@ export function renderRecentOrders() {
                         return `
                             <div class="text-gray-700">
                                 <div class="font-semibold">${item.customization.quantity}x ${item.name}</div>
-                                <div class="text-xs text-gray-600 ml-3">${item.customization.size.name}, ${item.customization.sugar.name} sugar, ${item.customization.temp.name}</div>
+                                <div class="text-xs text-gray-600 ml-3">${item.customization.size.name}, ${item.customization.sugar.name} sugar</div>
                             </div>
                         `;
                     }
@@ -46,10 +46,29 @@ export function renderRecentOrders() {
     // Add event listeners
     container.querySelectorAll('.delete-order-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            if (confirm('Are you sure you want to delete this order?')) {
-                state.deleteOrder(parseInt(btn.dataset.orderId));
-                renderRecentOrders();
-            }
+            Swal.fire({
+                icon: 'warning',
+                title: 'Delete Order?',
+                text: 'Are you sure you want to delete this order?',
+                showCancelButton: true,
+                confirmButtonColor: '#dc2626',
+                cancelButtonColor: '#6b7280',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    state.deleteOrder(parseInt(btn.dataset.orderId));
+                    renderRecentOrders();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Deleted!',
+                        text: 'The order has been deleted.',
+                        confirmButtonColor: '#d97706',
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+                }
+            });
         });
     });
 }
@@ -65,7 +84,12 @@ export function initOrderHandlers() {
         const specialInstructions = document.getElementById('specialInstructions').value.trim();
 
         if (state.cart.length === 0) {
-            alert('Your cart is empty!');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Cart is Empty',
+                text: 'Please add items to your cart before placing an order.',
+                confirmButtonColor: '#d97706'
+            });
             return;
         }
 
@@ -86,6 +110,12 @@ export function initOrderHandlers() {
         renderCart();
         renderRecentOrders();
 
-        alert(`Thank you ${customerName}! Your order has been placed successfully! We'll call you at ${customerPhone} when it's ready.`);
+        Swal.fire({
+            icon: 'success',
+            title: 'Order Placed!',
+            html: `Thank you <strong>${customerName}</strong>!<br>Your order has been placed successfully!<br>We'll call you at <strong>${customerPhone}</strong> when it's ready.`,
+            confirmButtonColor: '#d97706',
+            confirmButtonText: 'Great!'
+        });
     });
 }

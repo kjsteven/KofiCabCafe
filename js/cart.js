@@ -30,8 +30,8 @@ export function renderCart() {
 
     if (state.cart.length === 0) {
         cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-8">Your cart is empty</p>';
-        cartCount.textContent = '0';
-        cartTotal.textContent = formatPrice(0);
+        if (cartCount) cartCount.textContent = '0';
+        if (cartTotal) cartTotal.textContent = formatPrice(0);
         return;
     }
 
@@ -55,9 +55,8 @@ export function renderCart() {
                         <div class="flex-1">
                             <h4 class="font-semibold text-gray-800">${item.name}</h4>
                             <div class="text-xs text-gray-600 mt-1 space-y-1">
-                                <div>${item.customization.size.name} • ${item.customization.temp.name}</div>
-                                <div>Sugar: ${item.customization.sugar.name} • Shots: ${item.customization.shots.name}</div>
-                                ${item.customization.addons.length > 0 ? `<div>+ ${item.customization.addons.map(a => a.name).join(', ')}</div>` : ''}
+                                <div>Size: ${item.customization.size.name}</div>
+                                <div>Sugar: ${item.customization.sugar.name}</div>
                             </div>
                             <p class="text-amber-700 font-bold mt-2">${formatPrice(item.totalPrice)} (${item.customization.quantity}x)</p>
                         </div>
@@ -76,6 +75,6 @@ export function renderCart() {
         });
     });
 
-    cartCount.textContent = state.getCartItemCount();
-    cartTotal.textContent = formatPrice(state.getCartTotal());
+    if (cartCount) cartCount.textContent = state.getCartItemCount();
+    if (cartTotal) cartTotal.textContent = formatPrice(state.getCartTotal());
 }

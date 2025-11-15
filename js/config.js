@@ -19,23 +19,6 @@ export const SIZES = [
 
 export const SUGAR_LEVELS = ['0%', '25%', '50%', '75%', '100%'];
 
-export const ESPRESSO_SHOTS = [
-    { name: 'Single', price: 0 },
-    { name: 'Double', price: 0.75 },
-    { name: 'Triple', price: 1.50 },
-    { name: 'Quad', price: 2.25 }
-];
-
-export const TEMPERATURES = ['Hot', 'Iced', 'Extra Hot'];
-
-export const ADDONS = [
-    { name: 'Extra Espresso Shot', price: 0.75, espressoOnly: true },
-    { name: 'Whipped Cream', price: 0.50, espressoOnly: false },
-    { name: 'Caramel Drizzle', price: 0.50, espressoOnly: false },
-    { name: 'Vanilla Syrup', price: 0.50, espressoOnly: false },
-    { name: 'Hazelnut Syrup', price: 0.50, espressoOnly: false },
-    { name: 'Oat Milk', price: 0.75, espressoOnly: false }
-];
 
 export const MENU_ITEMS = [
     // Espresso Category

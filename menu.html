@@ -36,10 +36,10 @@
     <div class="menu-container">
       <!-- Main Content with proper spacing -->
       <div class="container mx-auto px-4 sm:px-6 py-6 sm:py-8 mt-20 sm:mt-24 lg:mt-28">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
 
         <!-- Menu Section -->
-        <div class="lg:col-span-2">
+        <div class="lg:col-span-3">
           <div class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
             <h2 class="text-2xl sm:text-3xl font-display font-bold text-amber-900 mb-6">
               Our Menu
@@ -49,7 +49,7 @@
             <div id="categoryTabs" class="flex flex-wrap gap-3 mb-8"></div>
 
             <div
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-h-[500px] sm:max-h-[600px] overflow-y-auto pr-2"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-h-[500px] sm:max-h-[620px] overflow-y-auto pr-2"
               id="menuGrid"
             ></div>
           </div>
@@ -60,30 +60,34 @@
           <!-- Recent Orders -->
           <div
             id="recentOrdersContainer"
-            class="bg-white rounded-3xl shadow-xl p-6 sm:p-8"
+            class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 flex flex-col"
+            style="max-height: 500px;"
           >
-            <h2 class="text-xl sm:text-2xl font-display font-bold text-amber-900 mb-6">
+            <h2 class="text-xl sm:text-2xl font-display font-bold text-amber-900 mb-6 flex-shrink-0">
               Recent Orders
             </h2>
             <div
               id="recentOrders"
-              class="space-y-4 max-h-64 sm:max-h-96 overflow-y-auto"
+              class="space-y-4 overflow-y-auto flex-1"
+              style="scrollbar-width: thin; scrollbar-color: #d97706 #fef3c7;"
             ></div>
           </div>
 
           <!-- Cart Sidebar -->
           <div
             id="cartSidebar"
-            class="bg-white rounded-3xl shadow-xl p-6 sm:p-8"
+            class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 flex flex-col"
+            style="max-height: 600px;"
           >
-            <h2 class="text-xl sm:text-2xl font-display font-bold text-amber-900 mb-6">
+            <h2 class="text-xl sm:text-2xl font-display font-bold text-amber-900 mb-6 flex-shrink-0">
               Your Cart
             </h2>
             <div
               id="cartItems"
-              class="space-y-4 mb-6 max-h-48 sm:max-h-64 overflow-y-auto"
+              class="space-y-4 mb-6 overflow-y-auto"
+              style="max-height: 200px; scrollbar-width: thin; scrollbar-color: #d97706 #fef3c7;"
             ></div>
-            <div class="border-t-2 border-amber-200 pt-4">
+            <div class="border-t-2 border-amber-200 pt-4 flex-shrink-0">
               <div class="flex justify-between items-center mb-6">
                 <span class="text-lg sm:text-xl font-semibold text-gray-700">Total:</span>
                 <span class="text-xl sm:text-2xl font-bold text-amber-900" id="cartTotal"
@@ -172,30 +176,6 @@
               >Sugar Level *</label
             >
             <div id="sugarButtons" class="grid grid-cols-4 gap-2"></div>
-          </div>
-
-          <!-- Espresso Shots -->
-          <div id="shotsOption">
-            <label class="block text-sm font-semibold text-gray-700 mb-3"
-              >Espresso Shots</label
-            >
-            <div id="shotsButtons" class="grid grid-cols-4 gap-2"></div>
-          </div>
-
-          <!-- Temperature -->
-          <div id="tempOption">
-            <label class="block text-sm font-semibold text-gray-700 mb-3"
-              >Temperature *</label
-            >
-            <div id="tempButtons" class="grid grid-cols-3 gap-3"></div>
-          </div>
-
-          <!-- Add-ons -->
-          <div id="addonsOption">
-            <label class="block text-sm font-semibold text-gray-700 mb-3"
-              >Add-ons (Optional)</label
-            >
-            <div id="addonsList" class="space-y-2"></div>
           </div>
 
           <!-- Quantity -->
@@ -296,7 +276,7 @@
       </div>
     </footer>
     
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="js/app.js"></script>
   </body>
 </html>
