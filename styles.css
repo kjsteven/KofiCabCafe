@@ -939,7 +939,7 @@ main h1 {
 /* MENU STYLES */
 
 .menu-container {
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   padding: 0;
   background: linear-gradient(135deg, #9b7653 0%, #b8916d 50%, #8b6f4e 100%);
 }

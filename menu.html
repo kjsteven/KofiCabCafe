@@ -23,10 +23,8 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="min-h-screen">
+  <body>
     <div id="site-header"></div>
-
-
     <script>
       (async () => {
         try {
@@ -41,102 +39,205 @@
 
     <div class="menu-container">
       <!-- Main Content with proper spacing -->
-      <div class="container mx-auto px-4 sm:px-6 py-6 sm:py-8 mt-20 sm:mt-24 lg:mt-28">
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div
+        class="container mx-auto px-4 sm:px-6 py-6 sm:py-8 pt-20 sm:pt-24 lg:pt-28"
+      >
+        <div>
+          <!-- Menu Section -->
+          <div>
+            <div class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+              <h2
+                class="text-2xl sm:text-3xl font-display font-bold text-amber-900 mb-6"
+              >
+                Our Menu
+              </h2>
 
-        <!-- Menu Section -->
-        <div class="lg:col-span-3">
-          <div class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
-            <h2 class="text-2xl sm:text-3xl font-display font-bold text-amber-900 mb-6">
-              Our Menu
-            </h2>
+              <!-- Category Tabs -->
+              <div id="categoryTabs" class="flex flex-wrap gap-3 mb-8"></div>
 
-            <!-- Category Tabs -->
-            <div id="categoryTabs" class="flex flex-wrap gap-3 mb-8"></div>
-
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-h-[500px] sm:max-h-[620px] overflow-y-auto pr-2"
-              id="menuGrid"
-            ></div>
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-h-[520px] sm:max-h-[600px] overflow-y-auto pr-2"
+                id="menuGrid"
+              ></div>
+            </div>
           </div>
         </div>
 
-        <!-- Right Sidebar: Recent Orders and Cart -->
-        <div class="lg:col-span-1 space-y-4">
-          <!-- Recent Orders -->
+        <!-- Recent Orders -->
+        <div class="space-y-4">
           <div
             id="recentOrdersContainer"
             class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 flex flex-col"
-            style="max-height: 500px;"
+            style="max-height: 500px"
           >
-            <h2 class="text-xl sm:text-2xl font-display font-bold text-amber-900 mb-6 flex-shrink-0">
+            <h2
+              class="text-xl sm:text-2xl font-display font-bold text-amber-900 mb-6 flex-shrink-0"
+            >
               Recent Orders
             </h2>
             <div
               id="recentOrders"
               class="space-y-4 overflow-y-auto flex-1"
-              style="scrollbar-width: thin; scrollbar-color: #d97706 #fef3c7;"
+              style="scrollbar-width: thin; scrollbar-color: #d97706 #fef3c7"
             ></div>
-          </div>
-
-          <!-- Cart Sidebar -->
-          <div
-            id="cartSidebar"
-            class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 flex flex-col"
-            style="max-height: 600px;"
-          >
-            <h2 class="text-xl sm:text-2xl font-display font-bold text-amber-900 mb-6 flex-shrink-0">
-              Your Cart
-            </h2>
-            <div
-              id="cartItems"
-              class="space-y-4 mb-6 overflow-y-auto"
-              style="max-height: 200px; scrollbar-width: thin; scrollbar-color: #d97706 #fef3c7;"
-            ></div>
-            <div class="border-t-2 border-amber-200 pt-4 flex-shrink-0">
-              <div class="flex justify-between items-center mb-6">
-                <span class="text-lg sm:text-xl font-semibold text-gray-700">Total:</span>
-                <span class="text-xl sm:text-2xl font-bold text-amber-900" id="cartTotal"
-                  >$0.00</span
-                >
-              </div>
-
-              <!-- Order Form -->
-              <form id="orderForm" class="space-y-4">
-                <input
-                  type="text"
-                  id="customerName"
-                  placeholder="Your name *"
-                  class="w-full px-4 py-2 sm:py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 text-sm sm:text-base"
-                  required
-                />
-
-                <input
-                  type="email"
-                  id="customerEmail"
-                  placeholder="Email address *"
-                  class="w-full px-4 py-2 sm:py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 text-sm sm:text-base"
-                  required
-                />
-
-                <textarea
-                  id="specialInstructions"
-                  placeholder="Special instructions (optional)"
-                  rows="2"
-                  class="w-full px-4 py-2 sm:py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 text-sm sm:text-base"
-                ></textarea>
-
-                <button
-                  type="submit"
-                  class="w-full mt-6 bg-gradient-to-r from-amber-600 to-orange-600 text-white py-2.5 sm:py-3 rounded-xl font-semibold hover:from-amber-700 hover:to-orange-700 transition-all shadow-lg text-sm sm:text-base"
-                >
-                  Place Order
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </div>
+      
+    </div>
+
+    <!-- Sidebar -->
+    <div>
+      <!-- Placeholder to keep grid spacing on large screens -->
+      <div class="hidden lg:block h-full"></div>
+
+      <!-- Floating open-cart button -->
+      <button
+        id="openCartBtn"
+        aria-controls="cartSidebar"
+        aria-expanded="false"
+        class="fixed bottom-6 right-6 z-40 bg-amber-600 hover:bg-amber-700 text-white py-3 px-4 rounded-full shadow-lg flex items-center gap-2"
+        title="Open cart"
+      >
+        <i class="iconoir-shopping-bag" aria-hidden="true"></i>
+        <span class="hidden sm:inline">Cart <span id="cartCount"  aria-live="polite" title="Items in cart" class="text-red-200"></span></span>
+      </button>
+
+      <!-- Overlay -->
+      <div
+        id="cartOverlay"
+        class="hidden fixed inset-0 bg-black bg-opacity-40 z-30"
+        aria-hidden="true"
+      ></div>
+
+      <!-- Off-canvas Sidebar -->
+      <aside
+        id="cartSidebar"
+        class="fixed inset-y-0 right-0 w-full max-w-sm transform translate-x-full transition-transform duration-300 z-50"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+      >
+        <div
+          class="h-full flex flex-col bg-white rounded-l-3xl shadow-xl p-6 sm:p-8 overflow-y-auto"
+        >
+          <div class="flex justify-between items-start mb-6">
+            <h2
+              class="text-xl sm:text-2xl font-display font-bold text-amber-900"
+            >
+              Your Cart
+            </h2>
+            <button
+              id="closeCartBtn"
+              class="text-gray-500 hover:text-gray-700 text-2xl"
+              aria-label="Close cart"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div
+            id="cartItems"
+            class="space-y-4 mb-6 overflow-y-auto"
+            style="
+              max-height: 200px;
+              scrollbar-width: thin;
+              scrollbar-color: #d97706 #fef3c7;
+            "
+          ></div>
+
+          <div class="border-t-2 border-amber-200 pt-4 mt-auto">
+            <div class="flex justify-between items-center mb-6">
+              <span class="text-lg sm:text-xl font-semibold text-gray-700"
+                >Total:</span
+              >
+              <span
+                class="text-xl sm:text-2xl font-bold text-amber-900"
+                id="cartTotal"
+                >$0.00</span
+              >
+            </div>
+
+            <!-- Order Form -->
+            <form id="orderForm" class="space-y-4">
+              <input
+                type="text"
+                id="customerName"
+                placeholder="Your name *"
+                class="w-full px-4 py-2 sm:py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 text-sm sm:text-base"
+                required
+              />
+
+              <input
+                type="email"
+                id="customerEmail"
+                placeholder="Email address *"
+                class="w-full px-4 py-2 sm:py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 text-sm sm:text-base"
+                required
+              />
+
+              <textarea
+                id="specialInstructions"
+                placeholder="Special instructions (optional)"
+                rows="2"
+                class="w-full px-4 py-2 sm:py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 text-sm sm:text-base"
+              ></textarea>
+
+              <button
+                type="submit"
+                class="w-full mt-6 bg-gradient-to-r from-amber-600 to-orange-600 text-white py-2.5 sm:py-3 rounded-xl font-semibold hover:from-amber-700 hover:to-orange-700 transition-all shadow-lg text-sm sm:text-base"
+              >
+                Place Order
+              </button>
+            </form>
+          </div>
+        </div>
+      </aside>
+
+      <script>
+        (function () {
+          const openBtn = document.getElementById("openCartBtn");
+          const closeBtn = document.getElementById("closeCartBtn");
+          const sidebar = document.getElementById("cartSidebar");
+          const overlay = document.getElementById("cartOverlay");
+
+          function openCart() {
+            sidebar.classList.remove("translate-x-full");
+            sidebar.setAttribute("aria-hidden", "false");
+            openBtn.setAttribute("aria-expanded", "true");
+            overlay.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+            // move focus into sidebar
+            const focusable = sidebar.querySelector(
+              'button, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])'
+            );
+            if (focusable) focusable.focus();
+          }
+
+          function closeCart() {
+            sidebar.classList.add("translate-x-full");
+            sidebar.setAttribute("aria-hidden", "true");
+            openBtn.setAttribute("aria-expanded", "false");
+            overlay.classList.add("hidden");
+            document.body.style.overflow = "";
+            openBtn.focus();
+          }
+
+          openBtn.addEventListener("click", openCart);
+          closeBtn.addEventListener("click", closeCart);
+          overlay.addEventListener("click", closeCart);
+
+          // Close on Escape
+          window.addEventListener("keydown", (e) => {
+            if (
+              e.key === "Escape" &&
+              sidebar.getAttribute("aria-hidden") === "false"
+            ) {
+              closeCart();
+            }
+          });
+        })();
+      </script>
     </div>
 
     <!-- Customization Modal -->
@@ -233,17 +334,15 @@
       </div>
     </div>
 
-    
     <footer>
       <div class="footer-container">
         <div class="footer-logo-container">
-
           <div class="footer-logo-desc">
             <img src="./assets/homepage1.jpg" alt="" class="footer-logo" />
 
             <p class="footer-description">
-              Join us for a cup and experience the warmth of
-              our community. Come to Kofi Cab Cafe.
+              Join us for a cup and experience the warmth of our community. Come
+              to Kofi Cab Cafe.
             </p>
           </div>
 
@@ -281,9 +380,12 @@
         <p class="copyright">&copy; 2024 Kofi Cab Cafe. All rights reserved.</p>
       </div>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <script type="module" src="js/app.js"></script>
   </body>
 </html>
