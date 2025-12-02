@@ -15,12 +15,21 @@
   </head>
   <body class="flex-column">
     <div id="site-header"></div>
+
     <script>
       (async () => {
         try {
           const res = await fetch("header.html");
           if (!res.ok) throw new Error("Could not load header: " + res.status);
           document.getElementById("site-header").innerHTML = await res.text();
+
+          // ✅ Now the header exists, we can attach the click event
+          const hamburger = document.getElementById("hamburger");
+          const navMenu = document.getElementById("navMenu");
+
+          hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+          });
         } catch (err) {
           console.error(err);
         }
@@ -407,15 +416,18 @@
         data-aos="fade-up"
         data-aos-delay="500"
       >
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8630035970996!2d121.0572226800361!3d14.549825749653312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90000a28e0f%3A0x71ff3342c8b1bfd!2sKofi%20Cab!5e0!3m2!1sen!2sph!4v1763062285806!5m2!1sen!2sph"
-          width="630"
-          height="450"
-          style="border-radius: 16px"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <div class="map-wrapper" style="max-width: 630px; margin: auto">
+          <iframe
+            class="responsive-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8630035970996!2d121.0572226800361!3d14.549825749653312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90000a28e0f%3A0x71ff3342c8b1bfd!2sKofi%20Cab!5e0!3m2!1sen!2sph!4v1763062285806!5m2!1sen!2sph"
+            width="630"
+            height="450"
+            style="border-radius: 16px; border: 0; display: block"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </section>
 
@@ -470,8 +482,6 @@
         <p class="copyright">&copy; 2024 Kofi Cab Cafe. All rights reserved.</p>
       </div>
     </footer>
-
-    <script type="module" src="js/app.js"></script>
   </body>
 </html>
 
